@@ -97,7 +97,6 @@ public class Deck {
 				}
 			}
 		}
-		printDeck();
 		shuffle(full);
 
 	}
@@ -108,10 +107,14 @@ public class Deck {
 	//Return the first card on the deck. If the deck is empty, swap the deck with
 	//the scrap deck before returning a card.
 	public String drawCard(){
+		String card;
 		if(full.isEmpty()){
 			swapDecks();
 		}
-		return full.get(0);
+		card = full.get(0);
+		full.remove(full.get(0));
+		return card;
+
 	}
 	//Returns true if the deck to draw from is empty, false otherwise.
 	public boolean isEmpty(){

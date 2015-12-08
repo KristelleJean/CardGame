@@ -149,6 +149,7 @@ public class Hand {
 	//Determines if the user would like their ace represented by
 	//a 1 or 11. Makes sure that the user enters valid data.
 	private int aceValue() {
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		int input;
 

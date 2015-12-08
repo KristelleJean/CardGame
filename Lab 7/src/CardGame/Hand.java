@@ -1,4 +1,5 @@
 package CardGame;
+
 /* *********************************************************************
 * Name: 
 * Class: IOOP
@@ -61,6 +62,7 @@ package CardGame;
 * Output: 
 * *********************************************************************
 */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -70,6 +72,7 @@ public class Hand {
 	public Hand(){
 		hand = new ArrayList<String>(0);
 	}
+	
 	//Display the player’s hand. If the hand is empty display a message
 	//indicating so. 
 	public void displayHand(){
@@ -79,6 +82,7 @@ public class Hand {
 			System.out.println(hand.toString());
 		}
 	}
+	
 	//Returns true if the hand is empty, false otherwise
 	public boolean isEmpty(){
 		boolean result = false;
@@ -87,6 +91,7 @@ public class Hand {
 		}
 		return result;
 	}
+	
 	//Returns true if the hand contains 5 cards, false otherwise.
 	public boolean isFull(){
 		boolean result = false;
@@ -95,15 +100,18 @@ public class Hand {
 		}
 		return result;
 	}
+	
 	//Inserts a card into the array of cards.
 	public void addCard(String card){
 		hand.add(card);
 	}
+	
 	//Drops the card at position index. Swap the last card in
 	//the array with this position to keep all cards in the front of the array. 
 	public void dropCard(int index){
 		hand.remove(index+1);
 	}
+	
 	//returns the sum and product of the hand
 	public int[] sumAndProduct() {
 		int[] result = new int[2];
@@ -135,6 +143,7 @@ public class Hand {
 		
 		return result;
 	}
+	
 	//Returns the index of the card in the array if the card is in the hand, -1
 	//otherwise.
 	public int containsCard(String card){
@@ -146,6 +155,7 @@ public class Hand {
 		}
 		return index;
 	}
+	
 	//Determines if the user would like their ace represented by
 	//a 1 or 11. Makes sure that the user enters valid data.
 	private int aceValue() {

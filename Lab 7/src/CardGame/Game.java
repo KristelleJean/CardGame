@@ -12,8 +12,11 @@ public class Game {
 		System.out.println("Enter the first players name!");
 		String playerTwo = scan.nextLine();
 		
-		Player player_one = new Player(playerOne);
-		Player player_two = new Player(playerTwo);
+		int target = (int)(Math.random() * 40) + 10;
+		System.out.println("The target score is " + target);
+		
+		Player player_one = new Player(playerOne, target);
+		Player player_two = new Player(playerTwo, target);
 		
 		do{
 			

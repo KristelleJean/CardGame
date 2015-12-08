@@ -1,4 +1,5 @@
 package CardGame;
+
 /* *********************************************************************
 * Name: 
 * Class: IOOP
@@ -61,6 +62,7 @@ package CardGame;
 * Output: 
 * *********************************************************************
 */
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -100,10 +102,12 @@ public class Deck {
 		shuffle(full);
 
 	}
+	
 	//Insert a discarded card into the scrap deck.
 	public void insertCard(String card){
 		scrap.add(card);
 	}
+	
 	//Return the first card on the deck. If the deck is empty, swap the deck with
 	//the scrap deck before returning a card.
 	public String drawCard(){
@@ -116,10 +120,12 @@ public class Deck {
 		return card;
 
 	}
+	
 	//Returns true if the deck to draw from is empty, false otherwise.
 	public boolean isEmpty(){
 		return full.isEmpty();
 	}
+	
 	//Switch the deck and scrap deck. Shuffle the deck.
 	public void swapDecks(){
 		ArrayList<String> temp = new ArrayList<String>();
@@ -134,6 +140,7 @@ public class Deck {
 		}
 		
 	}
+	
 	//shuffles the cards in the deck
 	public void shuffle(ArrayList<String> deck){
 		for(int i = 1; i<=3; i++){

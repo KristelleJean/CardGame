@@ -93,7 +93,6 @@ public class Player {
 	the player's hand meets the target. */	
 	public void takeTurn() {
 		System.out.println("");
-		
 		System.out.println(player + ": ");
 		displayHand();
 		

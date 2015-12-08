@@ -80,11 +80,11 @@ public class Player {
 	}
 	
 	//Creates a player object with an empty hand and name *name*
-	public Player(String name) {
+	public Player(String name, int target) {
 		playerHand = new Hand();
 		player = name;
 		deck = new Deck();
-		target = (int)(Math.random() * 40) + 10;
+		this.target = target;
 		takeTurn();
 	}
 	

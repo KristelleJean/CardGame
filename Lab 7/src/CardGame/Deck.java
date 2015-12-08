@@ -72,7 +72,7 @@ public class Deck {
 		scrap = new ArrayList<String>(0);
 		full = new ArrayList<String>();
 		
-		//Fill the deck with the 52 cards
+		//fill the deck with the 52 cards
 		for (int i = 1; i <= 13; i++) {
 			if (i == 1) {
 				for (int j = 1; j <= 4; j++) {
@@ -97,7 +97,6 @@ public class Deck {
 				}
 			}
 		}
-		//printDeck();
 		shuffle(full);
 
 	}
@@ -108,10 +107,13 @@ public class Deck {
 	//Return the first card on the deck. If the deck is empty, swap the deck with
 	//the scrap deck before returning a card.
 	public String drawCard(){
+		String card;
 		if(full.isEmpty()){
 			swapDecks();
 		}
-		return full.get(0);
+		card = full.get(0);
+		full.remove(full.get(0));
+		return card;
 	}
 	//Returns true if the deck to draw from is empty, false otherwise.
 	public boolean isEmpty(){

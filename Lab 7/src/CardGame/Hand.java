@@ -109,7 +109,7 @@ public class Hand {
 	//Drops the card at position index. Swap the last card in
 	//the array with this position to keep all cards in the front of the array. 
 	public void dropCard(int index){
-		hand.remove(index+1);
+		hand.remove(index-1);
 	}
 	
 	//returns the sum and product of the hand
@@ -163,14 +163,13 @@ public class Hand {
 		Scanner scan = new Scanner(System.in);
 		int input;
 
-		do {
-			System.out.println("Would you like this ace card to represent an 11 or a 1?");
-			input = scan.nextInt();
+		System.out.println("Would you like this ace card to represent an 11 or a 1?");
+		input = scan.nextInt();
 
-			if (input != 1 && input != 11) {
-				System.out.println("That is not a valid option");
-			}
-		} while (input == 1 || input == 11);
+		if (input != 1 && input != 11) {
+			System.out.println("That is not a valid option");
+			aceValue();
+		}
 
 		return input;
 	}

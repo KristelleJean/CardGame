@@ -66,17 +66,17 @@ package CardGame;
 import java.util.Scanner;
 
 public class Player {
-	private static String player;
-	private static Hand playerHand;
+	private String player;
+	private Hand playerHand;
 	private static Deck deck;
-	private static int target;
+	private int target;
 	
 	//Creates a player object with an empty hand and no name
 	public Player() {
 		playerHand = new Hand();
 		player = "";
 		deck = new Deck();
-		target = (int)(Math.random() * 40) + 10;
+		takeTurn();
 	}
 	
 	//Creates a player object with an empty hand and name *name*
@@ -92,6 +92,8 @@ public class Player {
 	If full: drop a card. Return a boolean indicating if 
 	the player's hand meets the target. */	
 	public void takeTurn() {
+		System.out.println("");
+		
 		System.out.println(player + ": ");
 		displayHand();
 		
@@ -105,15 +107,15 @@ public class Player {
 	}
 	
 	//Display the players hand.
-	public static void displayHand() {
+	public void displayHand() {
 		playerHand.displayHand();
 	}
 	
 	//Get the player's name.
-	public static void getName() {
+	public void getName() {
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Enter the name of the player:");
+		System.out.println("Enter the name of the player: ");
 		player = scan.nextLine();
 	}
 	
@@ -139,12 +141,8 @@ public class Player {
 	
 	//Draw a card from the deck, display drawn card, then add to hand
 	private void pickup() {
-		//Get random card
 		String newCard = deck.drawCard();
-		
-		//Display the card.
-		System.out.println("The card you picked up was " + newCard);
-		//Add to hand.
+		System.out.println("The card you picked up was " + newCard + ".");
 		playerHand.addCard(newCard);
 	}
 	
@@ -161,7 +159,7 @@ public class Player {
 	
 	//Return true if player's hand reaches target sum through sum or product
 	//Otherwise, false
-	public static boolean completeTurn() {
+	public boolean completeTurn() {
 		boolean result = false;
 		int sum, product;
 		int[] sumAndProduct = new int[2];
@@ -170,9 +168,10 @@ public class Player {
 		sum = sumAndProduct[0];
 		product = sumAndProduct[1];
 		
-		if(sum==target||product==target){
+		if(sum == target || product == target){
 			result = true;
 		}
+		
 		return result;
 	}
 }

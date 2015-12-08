@@ -114,6 +114,7 @@ public class Deck {
 		card = full.get(0);
 		full.remove(full.get(0));
 		return card;
+
 	}
 	//Returns true if the deck to draw from is empty, false otherwise.
 	public boolean isEmpty(){

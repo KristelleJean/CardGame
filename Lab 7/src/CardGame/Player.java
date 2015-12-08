@@ -105,7 +105,7 @@ public class Player {
 	}
 	
 	//Display the players hand.
-	private static void displayHand() {
+	public static void displayHand() {
 		playerHand.displayHand();
 	}
 	

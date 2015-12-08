@@ -72,7 +72,7 @@ public class Deck {
 		scrap = new ArrayList<String>(0);
 		full = new ArrayList<String>();
 		
-		//fill the deck with the 52 cards
+		//Fill the deck with the 52 cards
 		for (int i = 1; i <= 13; i++) {
 			if (i == 1) {
 				for (int j = 1; j <= 4; j++) {

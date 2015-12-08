@@ -16,8 +16,7 @@ public class Game {
 		Player player_two = new Player(playerTwo);
 		
 		do{
-			Player player_one = new Player(playerOne);
-			Player player_two = new Player(playerTwo);
+			
 		}while(Player.completeTurn());
 	}
 }

@@ -69,7 +69,7 @@ public class Player {
 	private static String player;
 	private static Hand playerHand;
 	private static Deck deck;
-	private int target;
+	private static int target;
 	
 	//Creates a player object with an empty hand and no name
 	public Player() {
@@ -85,14 +85,15 @@ public class Player {
 		player = name;
 		deck = new Deck();
 		target = (int)(Math.random() * 40) + 10;
+		takeTurn();
 	}
 	
 	/* Display the player's hand. If empty: draw a card. 
 	If full: drop a card. Return a boolean indicating if 
 	the player's hand meets the target. */	
-	private void takeTurn() {
+	public void takeTurn() {
 		System.out.println(player + ": ");
-		playerHand.displayHand();
+		displayHand();
 		
 		if(playerHand.isEmpty()) {
 			pickup();
@@ -110,6 +111,7 @@ public class Player {
 	
 	//Get the player's name.
 	public static void getName() {
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the name of the player:");
 		player = scan.nextLine();
@@ -125,7 +127,7 @@ public class Player {
 		String answer = scan.next();
 		answer.toLowerCase();
 		
-		if(answer.contains("pick")) {
+		if(answer.contains("pickup")) {
 			pickup();
 		} else if(answer.contains("drop")) {
 			drop();
@@ -159,7 +161,7 @@ public class Player {
 	
 	//Return true if player's hand reaches target sum through sum or product
 	//Otherwise, false
-	public boolean completeTurn() {
+	public static boolean completeTurn() {
 		boolean result = false;
 		int sum, product;
 		int[] sumAndProduct = new int[2];

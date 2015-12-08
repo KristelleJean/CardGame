@@ -97,7 +97,7 @@ public class Deck {
 				}
 			}
 		}
-		printDeck();
+		//printDeck();
 		shuffle(full);
 
 	}

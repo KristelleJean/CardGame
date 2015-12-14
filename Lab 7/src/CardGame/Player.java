@@ -8,38 +8,7 @@ package CardGame;
 * ID: Lab #07
 * Purpose: Simulates a player in the cardgame. Each player contains a
 * a name, a hand, and a shared deck. Each player may take a turn
-* which consists of drawing or discarding a card.
-* *********************************************************************
-* TEST SUITE
-* *********************************************************************
-* Normal Cases
-* 
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 
-* 
-* 
-* Boundary Cases
-* 
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 
-*
-* Input: 
-* Output: 
-* 
-* 
-* Extreme Cases
-* 
-* Input: 
-* Output: 
+* which consists of drawing or discarding a card. 
 * *********************************************************************
 */
 
@@ -98,7 +67,7 @@ public class Player {
 		System.out.println("Enter the name of the player: ");
 		player = scan.nextLine();
 	}
-	
+
 	//Determine if the player wants to pick up or drop a card
 	//Make sure their input is valid
 	private void pickUpOrDrop() {
@@ -125,7 +94,36 @@ public class Player {
 		System.out.println("The card you picked up was " + newCard + ".");
 		playerHand.addCard(newCard);
 	}
-	
+	/*
+	* TEST SUITE
+	* *********************************************************************
+	* Normal Cases
+	* Input: 
+	* 	Hand:[3,5,7] 
+	* 	Which card would you like to drop: 3
+	* Output: 	
+	*	Hand:[3,5]
+	* Input: 
+	* 	Hand:[J,2,3,4,5] 
+	* 	Which card would you like to drop: 3
+	* Output: 	
+	*	Hand:[J,2,4,5]
+	* 
+	* Boundary Cases
+	*
+	* Input:
+	* 	Hand:[1]
+	* 	Which card would you like to drop: 1 
+	* Output: 	
+	*	Hand: This hand is empty.
+	* 
+	* Extreme Cases
+	* Input: 
+	* 	Hand: is empty
+	* Output: 	
+	*	A new card should be drawn
+	* *********************************************************************
+	*/
 	//Allow user to select which card they would like to drop
 	//Make sure they select a card they are holding
 	private void drop() {
@@ -136,7 +134,38 @@ public class Player {
 		int answer = scan.nextInt();
 		playerHand.dropCard(answer);
 	}
-	
+	/*
+	* TEST SUITE
+	* *********************************************************************
+	* Normal Cases
+	* Input: 
+	* 	Hand:[3,5,7] Target: 45
+	* Output: 	
+	*	False	
+	* Input: 
+	* 	Hand:[2,8,5] Target: 15
+	* Output: 	
+	*	True
+	* Input: 
+	* 	Hand:[A,5,8] Target: 40
+	* 	Would you like this A to represent 11 or 1: 1 
+	* Output: 	
+	*	True
+	* 
+	* Boundary Cases
+	* Input:
+	* 	Hand:[A] Target: 11
+	* 	Would you like this A to represent 11 or 1: 11
+	* Output: 	
+	*	True
+	* 
+	* Extreme Cases
+	* Input: 
+	* 	Hand: is empty
+	* Output: 	
+	*	A new card should be drawn
+	* *********************************************************************
+	*/
 	//Return true if player's hand reaches target sum through sum or product
 	//Otherwise, false
 	public boolean completeTurn() {

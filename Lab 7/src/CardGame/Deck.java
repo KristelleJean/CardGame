@@ -7,7 +7,7 @@ package CardGame;
 * **********************************************************************
 * ID: Lab #07
 * Purpose: Stimulates two sets of decks to be used in the cardgame. One
-* deck serves as the deck to draw from , while the other serves as a
+* deck serves as the deck to draw from, while the other serves as a
 * discard pile.
 */
 

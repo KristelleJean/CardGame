@@ -12,37 +12,6 @@ package CardGame;
 * of their choice. The sum of each card in the hand must be determined
 * along with the product of each card in the hand.
 * *********************************************************************
-* TEST SUITE
-* *********************************************************************
-* Normal Cases
-* 
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 
-* 
-* 
-* Boundary Cases
-* 
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 
-*
-* Input: 
-* Output: 
-* 
-* 
-* Extreme Cases
-* 
-* Input: 
-* Output: 
-* *********************************************************************
 */
 
 import java.util.ArrayList;
@@ -93,7 +62,36 @@ public class Hand {
 	public void dropCard(int index){
 		hand.remove(index-1);
 	}
-	
+	/*
+	* TEST SUITE
+	* *********************************************************************
+	* Normal Cases
+	* 	* Input: 
+	* 	Hand: [3,J,A]
+	* Output: 	
+	*	*would you like this A to represent an 11 or 1?* (based on user input.)
+	*	Sum is 24 (assuming user put in 11 for A)
+	*	Product is 330 (assuming user put in 11 for A)
+	* 
+	* Boundary Cases
+	* Input: 
+	* 	Hand: [7]
+	* Output: 	
+	*	Sum is 7
+	*	Product is 7
+	* Input: 
+	* 	Hand: [Q,4,K,3,5]
+	* Output: 	
+	* 	Sum is 32
+	* 	Product is 6000
+	*
+	* Extreme Cases
+	* Input:
+	*  Hand is empty
+	* Output: 
+	*	A new card is drawn
+	* *********************************************************************
+	*/
 	//returns the sum and product of the hand
 	public int[] sumAndProduct() {
 		int[] result = new int[2];
@@ -128,7 +126,7 @@ public class Hand {
 	
 	//Returns the index of the card in the array if the card is in the hand, -1
 	//otherwise.
-	public int containsCard(String card){
+	private int containsCard(String card){
 		int index = -1;
 		for(int i = 0; i < hand.size(); i++){
 			if(hand.get(i).equals(card)){

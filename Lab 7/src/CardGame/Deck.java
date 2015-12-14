@@ -1,66 +1,14 @@
 package CardGame;
 
 /* *********************************************************************
-* Name: 
+* Name: Eric Segally, Kristelle Lucero
 * Class: IOOP
 * Date: 14 December 2015
 * **********************************************************************
 * ID: Lab #07
-* Purpose: Using a standard deck of cards, develop a game for two 
-* players that start the players with 0 cards. At the start of the 
-* game, a number between 10 and 50 is randomly generated as the target 
-* for this game. On each turn the player can determine whether they 
-* would like to pick up a card from the deck or drop a card. The player 
-* can have a maximum of 5 cards in their hand at any time. The goal is 
-* for the player to hold a collection of cards that reaches the target 
-* through sum or product. The target cannot be reached by the sum or 
-* product of a subset of the player's cards. For a player's turn, if 
-* they choose to draw a card the player adds the first card from the 
-* deck to their hand and their turn is complete. The top card on the 
-* deck is hidden, so the player does not know what card they will be 
-* picking up before they do. If the player drops a card for their turn, 
-* you must ask the player which card they would like to drop from their 
-* hand and their hand is updated accordingly. Once one player achieves 
-* the target, the other player has one more turn. If the other player 
-* achieves the target in the final turn, display that the game results 
-* in a tie. Otherwise, display which player has won and their hand. At 
-* any time if the deck becomes empty, the collection of dropped cards 
-* is shuffled and replaces the empty deck. Normal rules apply: a non 
-* face card gets the value of the card, a face card is 10, and an Ace 
-* is 1 or 11 (you will have to ask the user which they would like it 
-* to be).
-* *********************************************************************
-* TEST SUITE
-* *********************************************************************
-* Normal Cases
-* 
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 
-* 
-* 
-* Boundary Cases
-* 
-* Input: 
-* Output: 	
-*
-* Input: 
-* Output: 
-*
-* Input: 
-* Output: 
-* 
-* 
-* Extreme Cases
-* 
-* Input: 
-* Output: 
-* *********************************************************************
+* Purpose: Stimulates two sets of decks to be used in the cardgame. One
+* deck serves as the deck to draw from , while the other serves as a
+* discard pile.
 */
 
 import java.util.ArrayList;
@@ -147,7 +95,7 @@ public class Deck {
 			Collections.shuffle(deck);
 		}
 	}
-	
+	//display the cards in the deck for debugging purposes
 	public void printDeck(){
 		for(String card: full){
 			System.out.println(card);
